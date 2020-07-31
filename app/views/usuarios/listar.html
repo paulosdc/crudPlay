@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Gordo nem é gente 2' /}
+<meta charset="utf-8">
+
+#{list items:lista, as:'user'}
+	<a href="@{usuarios.editar(user.id)}">Editar</a>
+	<br>
+	<a href="@{usuarios.deletar(user.id)}">Deletar</a>
+	<br>
+	<p>Nome: ${user.nome} - Email: ${user.email} - Tipo: ${user.tipo} <br></p>
+	
+#{/list}

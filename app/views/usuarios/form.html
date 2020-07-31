@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Gordo nem é gente' /}
+<meta charset="utf-8">	
+<form action="@{usuarios.salvar}">
+<a href="@{usuarios.listar}">Listagem</a>
+<input type="hidden" name="user.id" value="${user?.id}">
+<br>
+<input type="text" placeholder="Nome" name="user.nome" value="${user?.nome}">
+<br>
+<br>
+<input type="text" placeholder="Email" name="user.email" value="${user?.email}">
+<br>
+<br>
+<label>Tipo de Usuário:</label>
+<select name="user.tipo" value="${user?.tipo}">
+<option value="Usuário comum">Comum</option>
+<option #{if user?.tipo.equals("admin") } selected #{/if} value="Administrador">Admin</option>
+</select>
+<br>
+<br>
+<button>Salvar</button>
+
+</form>
